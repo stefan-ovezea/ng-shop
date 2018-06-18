@@ -1,6 +1,11 @@
+const uuid = require('uuid/v1');
+
 class UserModel {
     constructor(user) {
-        this.id = user.id;
+        if (user.id)
+            this.id = user.id;
+        else
+            this.id = uuid();
         this.name = user.name;
         this.age = user.age;
         this.address = user.address;

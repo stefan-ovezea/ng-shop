@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+
+.card {
+    border: none;
+    border-radius: 2px;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
+    outline: none;
+    transition: box-shadow 200ms cubic-bezier(0.4,0.0,0.2,1);
+    padding: 1rem;
+}
+
+.ng-valid[required], .ng-valid.required  {
+    border-left: 5px solid #42A948;
+}
+
+.ng-invalid:not(form)  {
+    border-left: 5px solid #a94442;
+}
+
+*:focus {
+    outline: none !important;
+    box-shadow: 0 0 0 0 #FFF !important;
+    border-color: rgb(206, 212, 218) !important;
+    -webkit-appearance: none !important;
+}

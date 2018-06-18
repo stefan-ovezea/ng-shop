@@ -9,13 +9,26 @@ userRouter.get('/', (req, res) => {
     res.send(users);
 });
 
+userRouter.post('/login', (req, res) => {
+    const { username, password } = req.body;
+    try {
+        userService.authenticate(username, password);
+        res.send({ username });
+    } catch(e) {
+        res.status(400).send({ message: e.message });
+    }
+});
+
 userRouter.get('/:id', (req, res) => {
     const id = req.params.id;
-    const user = userService.findById(id);
-    user ? res.send(user)
-         : res.status(404).send({
+    try {
+        const user = userService.findById(id);
+        res.send(user);
+    } catch(e) {
+        res.status(404).send({
              message: "User not found"
-         });
+        });
+    }
 });
 
 userRouter.post('/', (req, res) => {
