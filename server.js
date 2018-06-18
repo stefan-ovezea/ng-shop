@@ -5,6 +5,7 @@ const config = require('./config/config');
 
 const userRouter = require('./routes/user-routes');
 app.use('/users', userRouter);
+app.use(cors());
 
 app.get('/', (req, res) => {
     res.send('{"message": "Hello World!"}');

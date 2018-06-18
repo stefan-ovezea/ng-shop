@@ -1,8 +1,10 @@
 const userRouter = require('express').Router();
 const userService = require('../service/user-service');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 
 userRouter.use(bodyParser.json());
+userRouter.use(cors());
 
 userRouter.get('/', (req, res) => {
     const users = userService.findAll();
@@ -32,16 +34,16 @@ userRouter.get('/:id', (req, res) => {
 });
 
 userRouter.post('/', (req, res) => {
-    const user = req.body;
+    const { user } = req.body;
     try {
-        res.send(userService.add(req.body));
+        res.send(userService.add(user));
     } catch(e) {
         res.status(500).send(e);
     }
 });
 
 userRouter.patch('/:id', (req, res) => {
-    const user = req.body;
+    const { user } = req.body;
     try {
         res.send(userService.update(user));
     } catch(e) {

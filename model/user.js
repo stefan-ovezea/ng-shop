@@ -6,7 +6,9 @@ class UserModel {
             this.id = user.id;
         else
             this.id = uuid();
-        this.name = user.name;
+        this.username = user.username;
+        this.firstName = user.firstName;
+        this.lastName = user.lastName;
         this.age = user.age;
         this.address = user.address;
     }

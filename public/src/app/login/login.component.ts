@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
+import { UserService } from '../shared/services/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -7,9 +10,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  errorMessage: string;
+  loginForm: FormGroup;
+
+  constructor(
+    private formBuilder: FormBuilder,
+    private router: Router,
+    private userService: UserService
+  ) { }
 
   ngOnInit() {
+    localStorage.removeItem('currentUser');
+  }
+
+  login() {
   }
 
 }
