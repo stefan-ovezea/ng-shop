@@ -1,5 +1,5 @@
 const { userEntity } = require('../db/db');
-const UserModel = require('../model/user');
+const UserModel = require('../models/user');
 
 module.exports.findAll = () => userEntity.find().map((user) => {
     return new UserModel(user);
