@@ -8,7 +8,7 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: './layout/layout.module#LayoutModule',
-    canActivate: [AuthGuard]
+    canActivate: []
   },
   {
     path: 'login', component: LoginComponent
@@ -19,7 +19,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {enableTracing: false})],
+  imports: [RouterModule.forRoot(routes, { enableTracing: false })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
