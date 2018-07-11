@@ -9,21 +9,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-
   errorMessage: string;
-  loginForm: FormGroup;
+  loginForm: FormGroup = new FormGroup({});
 
-  constructor(
-    private formBuilder: FormBuilder,
-    private router: Router,
-    private userService: UserService
-  ) { }
+  constructor(private formBuilder: FormBuilder, private router: Router, private userService: UserService) {}
 
   ngOnInit() {
     localStorage.removeItem('currentUser');
   }
 
-  login() {
-  }
-
+  login() {}
 }

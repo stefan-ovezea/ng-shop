@@ -4,6 +4,7 @@ import { LayoutRoutingModule } from './layout-routing.module';
 import { LayoutComponent } from './layout.component';
 import { SharedModule } from '../shared/shared.module';
 import { HomeModule } from './home/home.module';
+import { ProductsComponent } from './products/products.component';
 
 @NgModule({
   imports: [
@@ -12,6 +13,6 @@ import { HomeModule } from './home/home.module';
     SharedModule,
     HomeModule
   ],
-  declarations: [LayoutComponent]
+  declarations: [LayoutComponent, ProductsComponent]
 })
 export class LayoutModule { }

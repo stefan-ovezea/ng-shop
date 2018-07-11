@@ -8,13 +8,15 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: './layout/layout.module#LayoutModule',
-    canActivate: []
+    canActivate: [AuthGuard]
   },
   {
-    path: 'login', component: LoginComponent
+    path: 'login',
+    component: LoginComponent
   },
   {
-    path: 'register', component: RegisterComponent
+    path: 'register',
+    component: RegisterComponent
   }
 ];
 
@@ -22,4 +24,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes, { enableTracing: false })],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

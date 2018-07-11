@@ -2,17 +2,24 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { LayoutComponent } from './layout.component';
+import { ProductsComponent } from './products/products.component';
 
-const routes: Routes = [
-  { path: '', component: LayoutComponent,
+export const layoutRoutes: Routes = [
+  {
+    path: '',
+    component: LayoutComponent,
     children: [
-      { path: '', component: HomeComponent }
+      { path: 'home', component: HomeComponent },
+      {
+        path: 'products',
+        component: ProductsComponent
+      }
     ]
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  imports: [RouterModule.forChild(layoutRoutes)],
   exports: [RouterModule]
 })
-export class LayoutRoutingModule { }
+export class LayoutRoutingModule {}
