@@ -7,14 +7,14 @@
     <form [formGroup]="loginForm" novalidate>
       <div class="form-group">
         <label for="username">Username</label>
-        <input class="form-control" type="text" name="username" id="username">
+        <input class="form-control" type="text" name="username" formControlName="username" id="username">
       </div>
       <div class="form-group">
         <label for="password">Password</label>
-        <input class="form-control" type="password" name="password" id="password">
+        <input class="form-control" type="password" formControlName="password" name="password" id="password">
         <small>For tesing purposes use: username: 'test'; password: 'test'</small>
       </div>
-      <button class="btn btn-primary">Login</button>
+      <button class="btn btn-primary" (click)="login()">Login</button>
     </form>
     <br>
     <span>Don't have a user?
