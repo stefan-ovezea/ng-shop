@@ -13,7 +13,6 @@ export class SidenavComponent implements OnInit {
 
   ngOnInit() {
     this.routes = this.resolveRoutes(layoutRoutes[0].children);
-    console.log(this.routes);
   }
 
   private resolveRoutes(routes) {
